@@ -1,0 +1,481 @@
+/* Specification */
+* {
+  box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+ul, li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+div, header, footer, section, form, nav, p, span, a, button, img {
+    margin: 0;
+    padding: 0;
+}
+a, a:hover, a:active {
+    text-decoration: none;
+    cursor: pointer;
+}
+p, span {
+   line-height: 1.3em;
+}
+
+/* ----------- logo & navigation {} --------------- */ 
+.nav-container {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 100%;
+	margin-top: 30px;
+}
+
+/* ---------------- menu-icon {} --------------- */
+.menu-icon {
+	z-index: 19;
+	position: relative;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.menu-icon__line {
+  position: relative;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(27, 27, 37);
+}
+.menu-icon__line::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(27, 27, 37);
+  transition: transform 0.2s ease-in, top 0.2s linear;
+}
+.menu-icon__line::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(27, 27, 37);
+  transition: transform 0.2s ease-in, top 0.2s linear;
+}
+.menu-icon.menu-icon-active .menu-icon__line {
+  background-color: transparent;
+
+}
+.menu-icon.menu-icon-active .menu-icon__line::before {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+.menu-icon.menu-icon-active .menu-icon__line::after {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+/* ------------ menu navigation {} ------------- */
+header {
+	position: relative;
+	padding-bottom: 50px;
+}
+.mobile-nav {
+	z-index: 9;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	width: 320px;
+	padding: 60px 50px 50px 50px;
+	background-color: rgba(200, 197, 241, 0.9);
+	visibility: hidden; 
+	transition: transform 0.2s ease-in;
+}
+.mobile-nav__active {
+	visibility: visible;
+}
+.nav__list{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.nav__item {
+	margin-bottom: 30px;
+}
+.nav__link {
+	color: rgb(27, 27, 37);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 22px;
+}
+.nav__link:hover {
+	color: rgb(255, 255, 255); 
+}
+/* ------------------ END menu {} ----------------- */
+
+/* -------------- header img & text {} -------------- */
+.header__img {
+	max-width: 100%;
+	margin-top: 30px;
+	position: relative;
+}
+.header-text {
+	max-width: 350px;
+	position: absolute;
+	left: 50px;
+	top: 30%;
+}
+h1 {
+	font-weight: 600;
+	font-size: 50px;
+	color: rgb(27, 27, 37);
+}
+.name-lg {
+	margin: 30px 0 -15px 0;
+	font-family: 'Great Vibes', cursive;
+	font-size: 35px;
+}
+.web-dev {
+	background-color: rgb(255, 255, 255, 0.7);
+	padding: 10px;
+	border-radius: 10px; 
+	margin-left: -10px;
+}
+.btn__contact-me {
+	display: block;
+	background-color: #f74954;
+	color: white;
+	font-weight: normal;
+	font-size: 12px;
+	width: 150px;
+	padding: 15px 0;
+	margin: 25px 0;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+}
+.btn__contact-me:hover {
+	color: #e64751;
+	background-color: #ffe4e6;
+	border: 1px solid #f74954;
+	width: 148px;
+	padding: 13px 0;
+}
+.btn__contact-me:active {
+	color: white;
+}
+
+/*------------- animation --------------*/
+
+.offer__bottom {
+	position: absolute;
+	display: flex;
+	top: 35%;
+	left: -120px;
+}
+.offer__bottom img {
+	width: 200px;
+  display: block;
+  animation-name: spin;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+} 
+/* -------------- end header {} -------------- */
+
+/* -------------- section about {} -------------- */
+.about-me {
+	margin: 100px 0;
+	display: flex;
+}
+.about__foto {
+	width: 100%;
+} 
+.about__text {
+	padding-left: 70px;
+}
+.about__text h2 {
+	font-size: 40px;
+	padding: 70px 0 45px 0;
+}
+.about__text p {
+	margin-bottom: 20px;
+}
+
+/* -------------- section skils {} -------------- */
+
+.skills {
+	padding: 100px 0;
+	flex-wrap: wrap;
+	background-color: rgb(250, 250, 250);
+}
+.skills h2 {
+	color: #f74954;
+	font-size: 40px;
+  display: flex;
+	justify-content: center;
+	padding-bottom: 70px;
+}
+span {
+	color: #f74954;
+	font-size: 18px;
+}
+.web-design__text p  {
+	padding: 20px 0;
+}
+.web-design__text {
+	border-right: 2px dotted #bd9780;
+	border-bottom: 2px solid #bd9780;
+	padding: 30px;
+}
+.web-design__pink {
+	max-width: 100%;
+	padding-left: 50px;
+}
+.front__img {
+	max-width: 100%;
+	margin-top: 100px;
+}
+.front__text p  {
+	padding: 20px 0;
+}
+.front__text {
+	padding: 30px;
+	margin-top: 100px;
+	border-bottom: 2px dotted #bd9780;
+}
+.back__img {
+	max-width: 100%;
+	margin-top: 100px;
+}
+.back__text {
+	padding: 30px;
+	margin-top: 100px;
+	border-left: 2px dotted #bd9780;
+
+}
+.back__text p  {
+	padding: 20px 0;
+}
+
+/* -------------- contacts {} -------------- */
+
+.contacts {
+	margin-top: 100px;
+}
+.contacts .container {
+	background-image: url(../img/Contacts.jpg);
+	padding: 60px 0;
+}
+.contacts__text {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.contacts h2 {
+	color: #f74954;
+	font-size: 40px;
+	padding: 0 0 40px 0;
+}
+.contacts__text input {
+	display: block;
+	border: none;
+	padding: 13px 0;
+	border-radius: 0;
+	width: 220px;
+	font-size: 14px;
+}
+.form-control:focus {
+	border-bottom: 1px solid #bd9780;
+	box-shadow: none;
+	outline: none;
+}
+button {
+	display: block;
+	background-color: #f74954;
+	border: 1px solid #f74954;
+	color: white;
+	font-weight: normal;
+	font-size: 14px;
+	width: 220px;
+	padding: 7px 0 8px 70px;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+}
+button:hover {
+	color: #e64751;
+	background-color: #ffe4e6;
+	border: 1px solid #f74954;
+}
+button:active {
+	color: #e64751;
+	background-color: #ffe4e6;
+	border: 1px solid #f74954;
+}
+.contacts__img {
+	height: 150px;
+}
+.cont__info {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.cont__details {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-weight: 600;
+	background-color: rgb(255, 255, 255, 0.8);
+	padding: 15px;
+	border-radius: 8px;
+	margin-top: 20px;; 
+}
+.cont__details span {
+	padding: 5px 0;
+	color: #ac8b50;
+}
+
+/* -------------- footer {} -------------- */
+footer {
+	background-color: #202020;
+	margin-top: 100px;
+}
+.footer__info {
+	color:  #ac8b50;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 70px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.footer__social {
+	display: flex;
+	flex-direction: row;
+	padding: 0 50px;
+}
+.footer__social p {
+	padding: 0 20px;
+}
+.footer__space {
+	letter-spacing: 3px;;
+}
+
+/* -------------- adaptive media {} -------------- */
+@media screen and (max-width: 990px) {
+	.web-design__pink {
+		padding-left: 0;
+		padding-top: 50px;
+	}
+	.web-design__text {
+		padding: 0;
+	}
+	.front__text {
+		padding: 0;
+	}
+}
+
+
+@media screen and (max-width: 990px) {
+	.about__text h2 {
+		padding: 0 0 30px 0;
+	}
+}
+
+
+@media screen and (max-width: 772px) {
+	.header-text {
+		top: 15%;
+	}
+	.btn__contact-me {
+		margin: 35px 0;
+	}
+	.offer__bottom img {
+		width: 150px;
+	}
+	.offer__bottom {
+		top: 35%;
+		left: -90px;
+	}
+	.about__img {
+		padding-top: 100px;
+	}
+	.about__text {
+		padding: 50px 0 0 0;
+	}
+}
+
+
+@media screen and (max-width: 575px) {
+	.contacts__img {
+		margin-top: 50px;
+	}
+	.contacts .container {
+		background-image: url(../img/Sea1.jpg);
+	}
+	.footer__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer__social {
+		padding: 30px 0;
+	}
+}
+
+ @media screen and (max-width: 530px) {
+	.header-text {
+		top: 70%;
+		padding-right: 30px;
+	}
+	h1 {
+		font-weight: 600;
+		font-size: 40px;
+		color: rgb(27, 27, 37);
+	}
+	header {
+		padding-bottom: 150px;
+	}
+
+}
+
+
+
+@media screen and (max-width: 380px) {
+	.header-text {
+		left: 30px;
+	}
+	header {
+		padding-bottom: 200px;
+	}
+	.back__img {
+		padding-top: 30px;
+	}
+}
